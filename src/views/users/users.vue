@@ -206,7 +206,8 @@ export default {
         pagenum: 1,
         pagesize: 4
       },
-      usersData: []
+      usersData: [],
+      usersDataLength: 0
     }
   },
   methods: {
@@ -270,6 +271,10 @@ export default {
           delUserById(id)
             .then(res => {
               if (res.data.meta.status === 200) {
+                // this.getUsers()
+                if (this.usersDataLength === 1 && this.users.pagenum !== 1) {
+                  this.users.pagenum--
+                }
                 this.getUsers()
                 this.$message.success(res.data.meta.msg)
               } else {
@@ -373,6 +378,7 @@ export default {
           // 將獲得的數據賦予給全局變量
           this.totalNum = res.data.data.total
           this.usersData = res.data.data.users
+          this.usersDataLength = this.usersData.length
         })
         .catch(err => {
           console.log(err)
