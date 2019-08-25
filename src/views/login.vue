@@ -58,7 +58,7 @@ export default {
             this.loginForm,
             res => {
               this.$message({
-                message: '登陆成功',
+                message: '欢迎使用后台管理系统',
                 type: 'success'
               })
               console.log(res)
