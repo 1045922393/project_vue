@@ -122,7 +122,7 @@ export default {
 
 <style lang='less' scoped>
 .home {
-  height: 100vh; //vh  v-view height
+  height: 100vh; //vh  view height
   .el-menu-admin:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
