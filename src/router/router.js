@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import login from '@/views/login.vue'
 import home from '../views/home.vue'
 import users from '../views/users/users.vue'
-import so from '../components/second-one.vue'
 import welcome from '../views/welcome.vue'
+import rightsList from '../views/rights/rightsList.vue'
+import rolesList from '../views/rights/rolesList.vue'
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -35,9 +36,14 @@ export default new VueRouter({
           component: users
         },
         {
-          name: 'second-one',
-          path: '2-2',
-          component: so
+          name: 'rightsList',
+          path: 'rightsList',
+          component: rightsList
+        },
+        {
+          name: 'rolesList',
+          path: 'rolesList',
+          component: rolesList
         }
       ]
     }

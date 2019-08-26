@@ -11,7 +11,6 @@
           @close="handleClose"
           background-color="#545c64"
           text-color="#fff"
-          active-text-color="#ffd04b"
           :unique-opened="true"
         >
           <!-- 用户管理 -->
@@ -32,11 +31,11 @@
               <i class="el-icon-setting" style="color:rgba(0, 255, 136,.8)"></i>
               <span style="color:rgba(0, 255, 136,.8)">权限管理</span>
             </template>
-            <el-menu-item index="roles">
+            <el-menu-item index="/home/rolesList">
               <i class="el-icon-s-custom" style="color:rgba(0, 255, 136,.8)"></i>
               <span style="color:rgba(0, 255, 136,.8)">角色列表</span>
             </el-menu-item>
-            <el-menu-item index="rights">
+            <el-menu-item index="/home/rightsList">
               <i class="el-icon-grape" style="color:rgba(0, 255, 136,.8)"></i>
               <span style="color:rgba(0, 255, 136,.8)">权限列表</span>
             </el-menu-item>

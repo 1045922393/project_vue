@@ -41,15 +41,21 @@
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button size="mini" type="primary" @click="editUser(scope.row)">
-            <i class="el-icon-edit"></i>
-          </el-button>
-          <el-button size="mini" type="danger" @click="delUser(scope.row.id)">
-            <i class="el-icon-delete"></i>
-          </el-button>
-          <el-button size="mini" type="warning" @click="editRole(scope.row)">
-            <i class="el-icon-check"></i>
-          </el-button>
+          <el-tooltip content="编辑" placement="left" effect="light">
+            <el-button size="mini" type="primary" @click="editUser(scope.row)">
+              <i class="el-icon-edit"></i>
+            </el-button>
+          </el-tooltip>
+          <el-tooltip content="删除" placement="top" effect="dark">
+            <el-button size="mini" type="danger" @click="delUser(scope.row.id)">
+              <i class="el-icon-delete"></i>
+            </el-button>
+          </el-tooltip>
+          <el-tooltip content="角色分配" placement="right" effect="light">
+            <el-button size="mini" type="warning" @click="editRole(scope.row)">
+              <i class="el-icon-check"></i>
+            </el-button>
+          </el-tooltip>
         </template>
       </el-table-column>
     </el-table>
@@ -223,7 +229,10 @@ export default {
               this.getUsers()
             }
           })
-          .catch(err => { console.log(err); this.$message.error('服务器错误') })
+          .catch(err => {
+            console.log(err)
+            this.$message.error('服务器错误')
+          })
       } else {
         this.$message.error('请分配角色')
       }
