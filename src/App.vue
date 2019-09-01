@@ -1,10 +1,16 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <father></father>
+  </div>
 </template>
 
 <script>
+import father from './pages/father'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    father
+  }
 }
 </script>
 
